@@ -4,6 +4,7 @@ services:
   teslamate:
     image: teslamate/teslamate:latest
     restart: always
+    mem_swappiness: 0
     environment:
       - DATABASE_USER=teslamate
       - DATABASE_PASS=secret

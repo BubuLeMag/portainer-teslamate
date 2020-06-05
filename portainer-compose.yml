@@ -3,6 +3,7 @@ version: "2"
 services:
   teslamate:
     image: teslamate/teslamate:latest
+    mem_swappiness: -1
     restart: always
     environment:
       - DATABASE_USER=teslamate
@@ -19,7 +20,7 @@ services:
 
   database:
     image: postgres:12
-    mem_swappiness: 0
+    mem_swappiness: -1
     restart: always
     environment:
       - POSTGRES_USER=teslamate
@@ -30,6 +31,7 @@ services:
 
   grafana:
     image: teslamate/grafana:latest
+    mem_swappiness: -1
     restart: always
     environment:
       - DATABASE_USER=teslamate
@@ -43,6 +45,7 @@ services:
 
   mosquitto:
     image: eclipse-mosquitto:1.6
+    mem_swappiness: -1
     restart: always
     ports:
       - 1883:1883

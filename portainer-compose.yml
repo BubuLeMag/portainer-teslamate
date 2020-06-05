@@ -4,7 +4,6 @@ services:
   teslamate:
     image: teslamate/teslamate:latest
     restart: always
-    mem_swappiness: 0
     environment:
       - DATABASE_USER=teslamate
       - DATABASE_PASS=secret
@@ -20,6 +19,7 @@ services:
 
   database:
     image: postgres:12
+    mem_swappiness: 0
     restart: always
     environment:
       - POSTGRES_USER=teslamate

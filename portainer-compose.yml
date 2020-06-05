@@ -14,7 +14,7 @@ services:
     ports:
       - 4000:4000
     volumes:
-      - ./import:/opt/app/import
+      - /volume1/docker/teslamate/import:/opt/app/import
     cap_drop:
       - all
 
